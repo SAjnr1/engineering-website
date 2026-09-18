@@ -4,6 +4,7 @@ import './Navbar.css'
 import { Link, NavLink } from 'react-router-dom';
 import { Home, Cog, GraduationCap, Clapperboard, Info } from 'lucide-react';
 
+
 const Navbar = () => {
 
    const [sticky, setSticky] = useState(false);
@@ -14,18 +15,19 @@ const Navbar = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-   }, []);
+   }, []); 
 
   return (
     <>
       {/* Top nav: full links on desktop, just logo on mobile (bottom bar handles nav there) */}
       <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
+     
         <ul className='desktop-nav-links'>
           <li><NavLink to='/' end className='home-link'>Home</NavLink></li>
-          <li><NavLink to='/services' className='services-link'>Student</NavLink></li>
-          <li><NavLink to='/product' className='program-link'>Projects</NavLink></li>
+          <li><NavLink to='/student' className='student-link'>Student</NavLink></li>
+          <li><NavLink to='/project' className='project-link'>Projects</NavLink></li>
           <li><NavLink to='/about' className='about-link'>About Us</NavLink></li>
-          <li><NavLink to='/testimonials' className='testimonial-link'>Media</NavLink></li>
+          <li><NavLink to='/media' className='media-link'>Media</NavLink></li>
         </ul>
       </nav>
 
@@ -38,13 +40,13 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to='/services' className='services-link'>
+          <NavLink to='/student' className='student-link'>
             <GraduationCap strokeWidth={2} />
             <span>Student</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to='/product' className='program-link'>
+          <NavLink to='/project' className='project-link'>
             <Cog strokeWidth={2} />
             <span>Project</span>
           </NavLink>
@@ -56,7 +58,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to='/testimonials' className='testimonial-link'>
+          <NavLink to='/media' className='media-link'>
             <Clapperboard strokeWidth={2} />
             <span>Media</span>
           </NavLink>

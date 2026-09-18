@@ -5,7 +5,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 const ThreeScene = ({
   // Offset applied AFTER the model is auto-centered at the origin.
   // e.g. { x: 3, y: 0, z: -5 } moves it 3 right, 5 back.
-  modelPosition = { x: 0, y: 0, z: 3},
+  modelPosition = { x: 0, y: 0, z: 2 },
   // The model is auto-scaled so its largest dimension equals this value.
   modelSize = 1
 }) => {

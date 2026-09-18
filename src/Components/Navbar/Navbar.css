@@ -2,7 +2,7 @@ nav{
     width: 100%;
     background: transparent;
     color: #faf6f6;
-    padding: 35px;
+    padding: 25px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -14,7 +14,7 @@ nav{
 }
 
 .logo{
-    width: 180px;
+    width: 100px;
 }
 
 nav ul li{
@@ -22,6 +22,7 @@ nav ul li{
     list-style: none;
     margin: 5px 20px;
     font-size: 16px;
+    font-family: "Outfit", sans-serif;
 }
 
 nav ul li a{
@@ -33,12 +34,12 @@ nav ul li a{
 }
 
 nav ul li a.active{
-    background: #faf6f6;
-    color: #2129a0;
+    background: #ffffff;
+    color: blue;
 }
 
 .dark-nav{
-    background: #2123a0;
+    background: #0004fa;
     transition: 0.5s;
 }
 
@@ -78,6 +79,10 @@ nav ul li a.active{
     .container{
         padding-left: 5%;
         padding-right: 5%;
+    }
+
+    nav{
+        display: none;
     }
 
     .logo{
@@ -135,6 +140,7 @@ nav ul li a.active{
         text-decoration: none;
         font-size: 12px;
         transition: color 0.2s ease;
+        font-family: "Outfit", sans-serif;
     }
 
     .bottom-nav li a svg{
