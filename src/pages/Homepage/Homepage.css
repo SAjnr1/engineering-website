@@ -38,10 +38,8 @@
     justify-content: center;
     display: flex;
     gap: 15px;
-     -webkit-text-stroke: 4px rgb(250, 250, 255); /* Adjust 4px to make it thicker/bolder */
-  
-  /* Forces the stroke behind the text fill so characters stay sharp */
-  paint-order: stroke fill; 
+    -webkit-text-stroke: 4px rgb(250, 250, 255); 
+    paint-order: stroke fill; 
 }
 
 .unit{

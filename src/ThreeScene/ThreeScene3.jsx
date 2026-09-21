@@ -7,7 +7,7 @@ const ThreeScene = ({
   // e.g. { x: 3, y: 0, z: -5 } moves it 3 right, 5 back.
   //modelPosition = { x: -0.3, y: 0.3, z: 3.5},
   //modelPosition = { x: 0, y: 0, z: 3.5},
-  modelPosition = { x: 0, y: 0, z: 3},
+  modelPosition = { x: 0, y: -0.1, z: 3},
   // The model is auto-scaled so its largest dimension equals this value.
   modelSize = 1
 }) => {

@@ -29,11 +29,12 @@ const Homepage = () => {
         </div>
         <div className="engineering-profile">
           <div className="unit-name">
-          <h2 className="unit">Engineering</h2><h2>Unit</h2>
+          <h2 className="unit">Admin</h2><h2>Page</h2>
           </div>
           <div className="unit-quote">
-            <p>Welcome to the official website of the PRESEC-Legon Engineering Unit.
-              Here you'll find information about our classes, students,projects and everything that makes our engineering journey special.
+            <p>Welcome to the PRESEC-Legon Engineering Unit Admin Portal. 
+              Manage and update the content, projects, classes, students, and other information featured on our website.
+
             </p>
           </div>
         </div>
