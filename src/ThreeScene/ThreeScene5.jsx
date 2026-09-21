@@ -5,13 +5,12 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 const ThreeScene = ({
   // Offset applied AFTER the model is auto-centered at the origin.
   // e.g. { x: 3, y: 0, z: -5 } moves it 3 right, 5 back.
-  //modelPosition = { x: -0.3, y: 0.3, z: 3.5},
-  //modelPosition = { x: 0, y: 0, z: 3.5},
-  modelPosition = { x: 0, y: 0, z: 3},
+  modelPosition = { x: 0, y: 0, z: 2 },
   // The model is auto-scaled so its largest dimension equals this value.
   modelSize = 1
 }) => {
   const mountRef = useRef(null)
+  const pivotRef = useRef(null)
   const isDraggingRef = useRef(false)
   const previousPointerRef = useRef({ x: 0, y: 0 })
 
@@ -107,6 +106,7 @@ const ThreeScene = ({
     // spinning flat in place like a disc in a disc player.
     const pivot = new THREE.Group()
     scene.add(pivot)
+    pivotRef.current = pivot
 
     const loader = new GLTFLoader()
 
@@ -383,6 +383,32 @@ const ThreeScene = ({
     }
   }, [modelPosition.x, modelPosition.y, modelPosition.z, modelSize])
 
+  // Responsive position override: on narrow screens, nudge the model
+  // to a different spot than `modelPosition` without re-running the
+  // scene-setup effect above (which would tear down and rebuild the
+  // renderer, lights, and reload the .glb). This only moves the
+  // pivot, which is safe even before the model has finished loading.
+  useEffect(() => {
+    const mql = window.matchMedia('(max-width: 400px)')
+
+    const applyPosition = (matches) => {
+      const pos = matches
+        ? { x: -2, y: -0.3, z: 2 }
+        : modelPosition
+
+      if (pivotRef.current) {
+        pivotRef.current.position.set(pos.x, pos.y, pos.z)
+      }
+    }
+
+    applyPosition(mql.matches)
+
+    const listener = (e) => applyPosition(e.matches)
+    mql.addEventListener('change', listener)
+
+    return () => mql.removeEventListener('change', listener)
+  }, [modelPosition])
+
   return (
     <div
       ref={mountRef}
@@ -395,7 +421,7 @@ const ThreeScene = ({
         cursor: 'grab',
         touchAction: 'none',
         borderRadius: '15px',
-       // transform: 'translateX(clamp(30px, 8vw, 60px))',
+        transform: 'translateX(clamp(30px, 8vw, 60px))',
       }}
     />
   )

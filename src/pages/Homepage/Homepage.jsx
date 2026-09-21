@@ -1,14 +1,21 @@
 import React from 'react'
 import './Homepage.css'
 import ThreeScene from '../../ThreeScene/ThreeScene3'
-import { Cog, GraduationCap, Clapperboard, CalendarDaysIcon } from 'lucide-react';
+import { Cog, GraduationCap, Clapperboard,  LogOutIcon, CalendarDaysIcon } from 'lucide-react';
 import Navbar from '../Navbar/Navbar';
-import { Link } from 'react-router-dom';
-import Footer from '../Footer/footer';
+import { Link, useNavigate } from 'react-router-dom';
 import Hero from '../../assets/engineering-logo.png'
+import { supabase } from "../../supabaseClient";
+
 
 
 const Homepage = () => {
+  const navigate = useNavigate();
+  
+    const logout = async () => {
+      await supabase.auth.signOut();
+      navigate("/admin/login", { replace: true });
+    };
   return (
     <>
    <Navbar/>
@@ -32,36 +39,45 @@ const Homepage = () => {
         </div>
       </div>
       <div className="menu-cards">
-        <Link to='/student' end className='student-link'>
+        <Link to='/admin/year_group' end className='student-link'>
         <ul className="card">
           <GraduationCap className='home-icon' strokeWidth={2}/>
           <span>Students</span>
         </ul>
         </Link>
 
-        <Link to='/project' className='project-link'>
+        <Link to='/admin/project' className='project-link'>
         <ul className="card"> 
           <Cog className='home-icon' strokeWidth={2}/>
           <span>Projects</span>  
         </ul>
         </Link>
 
-        <Link to='/events' className='media-link'>
+
+        <Link to='/admin/events' className='media-link'>
         <ul className="card">
           <CalendarDaysIcon className='home-icon' strokeWidth={2}/>
           <span>Events</span>
         </ul>
         </Link>
 
-        <Link to='/media' className="media-link">
+        <Link to='/admin/media' className="media-link">
         <ul className="card">
           <Clapperboard className='home-icon' strokeWidth={2}/>
           <span>Media</span>
         </ul>
         </Link>
 
+        <Link to='/admin/media' className="media-link">
+        <ul type="button" onClick={logout} className="logout_card">
+          <LogOutIcon className='home-icon' strokeWidth={2}/>
+          <span>Log Out</span>
+        </ul>
+        </Link>
+
       </div>
-      <Footer/>
+      
+      
     </div>
 
     </>

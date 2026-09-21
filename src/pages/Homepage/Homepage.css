@@ -38,10 +38,18 @@
     justify-content: center;
     display: flex;
     gap: 15px;
+     -webkit-text-stroke: 4px rgb(250, 250, 255); /* Adjust 4px to make it thicker/bolder */
+  
+  /* Forces the stroke behind the text fill so characters stay sharp */
+  paint-order: stroke fill; 
 }
 
 .unit{
     color: #fff;
+     -webkit-text-stroke: 4px rgb(38, 0, 255); /* Adjust 4px to make it thicker/bolder */
+  
+  /* Forces the stroke behind the text fill so characters stay sharp */
+  paint-order: stroke fill; 
 }
 
 .hero{
@@ -71,6 +79,7 @@ h2{
 
 .menu-cards ul{
     background: linear-gradient(35deg, rgb(0, 247, 255), rgb(0, 153, 255), rgb(0, 17, 255));
+    /*background: blue;*/
     color: rgb(244, 244, 248);
     width: 400px;
     height: 80px;
@@ -87,6 +96,13 @@ h2{
     font-family: "Outfit", sans-serif;
 }
 
+.menu-cards ul:hover{
+    background: linear-gradient(35deg, rgb(0, 17, 255), rgb(0, 153, 255), rgb(0, 247, 255));
+    border: 3px solid rgb(17, 0, 255);
+    transition: 0.3s ease;
+}
+
+
 .media-link,
 .project-link,
 .student-link{
@@ -95,6 +111,9 @@ h2{
     display: flex;
     gap: 15px;
 }
+
+
+
 
 
 

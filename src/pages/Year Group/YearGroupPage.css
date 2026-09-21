@@ -1,0 +1,313 @@
+.yg-page {
+  --ink: #1b2437;
+  --paper: #ffffff;
+  --surface: #ffffff;
+  --line: #d9dee7;
+  --line-strong: #000000;
+  --muted: #000000;
+  --accent: #0011ff;
+  --accent-dark: #02007c;
+  --danger: #b3261e;
+  --serif: "Outfit", sans-serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  padding: 24px 16px 64px;
+  box-sizing: border-box;
+  padding-top: 80px;
+}
+
+.yg-page *,
+.yg-page *::before,
+.yg-page *::after {
+  box-sizing: border-box;
+}
+
+.yg-shell {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.yg-header {
+  margin-bottom: 24px;
+}
+
+.yg-back {
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.yg-back:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.yg-header h1 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 8px 0 4px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #0011fa;
+}
+
+
+.yg-count {
+  margin: 0;
+  color: black;
+  font-size: 14px;
+}
+
+.yg-form {
+  display: grid;
+  gap: 16px;
+  max-width: 520px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 32px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+}
+
+.yg-form h2 {
+  font-size: 23px;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.yg-field {
+  display: grid;
+  gap: 6px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.yg-field input {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 400;
+}
+
+.yg-field input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.yg-upload {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 8px;
+}
+
+.yg-upload__thumb {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  background: rgb(170, 168, 168);
+  object-fit: cover;
+}
+
+.yg-upload__name {
+  flex: 1;
+  min-width: 120px;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.yg-btn {
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.yg-btn:hover {
+  border-color: var(--line-strong);
+}
+
+.yg-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.yg-btn--primary {
+  justify-self: start;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.yg-btn--primary1 {
+  justify-self: start;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.yg-btn--primary:hover,
+.yg-btn--primary1:hover {
+  border-color: var(--accent-dark);
+  background: var(--accent-dark);
+}
+
+.yg-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.yg-error {
+  margin: 0;
+  color: var(--danger);
+  font-size: 17px;
+}
+
+.yg-muted {
+  color: black;
+  font-size: 17px;
+}
+
+.yg-empty {
+  padding: 32px 16px;
+  border: 1px dashed black;
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+}
+
+.yg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.yg-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.yg-card__photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  background: #e4e8ef;
+}
+
+.yg-card__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.yg-card__initial {
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 48px;
+}
+
+.yg-card__name {
+  margin: 0;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.yg-error--list {
+  margin-bottom: 16px;
+}
+
+.yg-btn--small {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+.yg-btn--danger {
+  border-color: var(--danger);
+  background: var(--danger);
+  color: #ffffff;
+}
+
+.yg-btn--danger:hover {
+  border-color: #8f1e18;
+  background: #8f1e18;
+}
+
+.yg-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px 12px;
+}
+
+.yg-card__confirm {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.yg-delete {
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  color: var(--danger);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.yg-delete:hover {
+  text-decoration: underline;
+}
+
+.yg-delete:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px){
+  .yg-page{
+    padding-top: 20px;
+  }
+}

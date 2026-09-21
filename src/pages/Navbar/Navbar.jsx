@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 {/*import { Link } from 'react-scroll';*/}
 import { Link, NavLink } from 'react-router-dom';
-import { Home, Cog, GraduationCap, Clapperboard, CalendarDaysIcon } from 'lucide-react';
+import { Home, Cog, GraduationCap, Clapperboard,  CalendarDaysIcon } from 'lucide-react';
 
 
 const Navbar = () => {
@@ -23,42 +23,42 @@ const Navbar = () => {
       <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
      
         <ul className='desktop-nav-links'>
-          <li><NavLink to='/' end className='home-link'>Home</NavLink></li>
-          <li><NavLink to='/student' className='student-link'>Student</NavLink></li>
-          <li><NavLink to='/project' className='project-link'>Projects</NavLink></li>
-          <li><NavLink to='/events' className='about-link'>Events</NavLink></li>
-          <li><NavLink to='/media' className='media-link'>Media</NavLink></li>
+          <li><NavLink to='/admin/home' end className='home-link'>Home</NavLink></li>
+          <li><NavLink to='/admin/year_group' className='student-link'>Students</NavLink></li>
+          <li><NavLink to='/admin/project' className='project-link'>Projects</NavLink></li>
+          <li><NavLink to='/admin/events' className='about-link'>Events</NavLink></li>
+          <li><NavLink to='/admin/media' className='media-link'>Media</NavLink></li>
         </ul>
       </nav>
 
       {/* Bottom tab bar: only rendered visually on mobile via CSS media query */}
       <ul className='bottom-nav'>
         <li>
-          <NavLink to='/' end className='home-link'>
+          <NavLink to='/admin/home' end className='home-link'>
             <Home strokeWidth={2} />
             <span>Home</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to='/student' className='student-link'>
+          <NavLink to='/admin/year_group' className='student-link'>
             <GraduationCap strokeWidth={2} />
-            <span>Student</span>
+            <span>Students</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to='/project' className='project-link'>
+          <NavLink to='/admin/project' className='project-link'>
             <Cog strokeWidth={2} />
-            <span>Project</span>
+            <span>Projects</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to='/events' className='about-link'>
+          <NavLink to='/admin/events' className='about-link'>
             <CalendarDaysIcon strokeWidth={2} />
             <span>Events</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to='/media' className='media-link'>
+          <NavLink to='/admin/media' className='media-link'>
             <Clapperboard strokeWidth={2} />
             <span>Media</span>
           </NavLink>
