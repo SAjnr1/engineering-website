@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Homepage.css'
 import ThreeScene from '../../ThreeScene/ThreeScene3'
 import { Cog, GraduationCap, Clapperboard, CalendarDaysIcon } from 'lucide-react';
@@ -6,9 +6,39 @@ import Navbar from '../Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/footer';
 import Hero from '../../assets/engineering-logo.png'
+import { gsap } from 'gsap';
+import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
 
+gsap.registerPlugin(ScrambleTextPlugin);
 
 const Homepage = () => {
+  const engineeringRef = useRef(null);
+  const unitRef = useRef(null);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    tl.to(engineeringRef.current, {
+      duration: 4,
+      scrambleText: {
+        text: "Engineering",
+        chars: "QWERTYUIOPLKJHGFDSAZXCVBNM",
+        revealDelay: 0,
+        speed: 0.4,
+      },
+    }).to(unitRef.current, {
+      duration: 2,
+      scrambleText: {
+        text: "Unit",
+        chars: "QWERTYUIOPLKJHGFDSAZXCVBNM",
+        revealDelay: 0.3,
+        speed: 0.4,
+      },
+    }, "-=0.6"); // start slightly before the first one finishes
+
+    return () => tl.kill();
+  }, []);
+
   return (
     <>
    <Navbar/>
@@ -22,7 +52,7 @@ const Homepage = () => {
         </div>
         <div className="engineering-profile">
           <div className="unit-name">
-          <h2 className="unit">Engineering</h2><h2>Unit</h2>
+          <h2 className="unit" ref={engineeringRef}></h2><h2 ref={unitRef}></h2>
           </div>
           <div className="unit-quote">
             <p>Welcome to the official website of the PRESEC-Legon Engineering Unit.
