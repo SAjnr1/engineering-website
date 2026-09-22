@@ -90,6 +90,7 @@ button p{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
     gap: 15px;
 }
 
