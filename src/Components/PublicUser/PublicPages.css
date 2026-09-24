@@ -142,6 +142,38 @@
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 
+.pub-grid--presentations {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.pub-presentation-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+}
+
+.pub-presentation-card__icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #d9432e;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.pub-presentation-card__title {
+  font-size: 17px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
 .pub-card {
   display: block;
   overflow: hidden;

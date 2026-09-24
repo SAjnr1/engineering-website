@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { supabase } from "../../supabaseClient";
 import "./PublicPages.css";
+import { ArrowLeftIcon } from "lucide-react";
 
 // Microsoft's free viewer displays Office files inline; it needs a public https link.
 const officeViewerUrl = (fileUrl) =>
@@ -58,7 +59,7 @@ function PresentationList() {
           {items.map((p) => (
             <Link
               key={p.id}
-              to={`/presentations/${p.id}`}
+              to={`/slides/${p.id}`}
               className="pub-card pub-presentation-card"
             >
               <div className="pub-presentation-card__icon">PPT</div>
@@ -112,7 +113,10 @@ function PresentationViewer({ id }) {
   return (
     <>
       <header className="pub-header">
-        <Link to="/presentations" className="pub-back">Back to presentations</Link>
+        <div className="pub-backs">
+          <ArrowLeftIcon/>
+          <Link to="/slides" className="pub-back">Back to presentations</Link>
+        </div>
         {item && <h1>{item.title}</h1>}
       </header>
 

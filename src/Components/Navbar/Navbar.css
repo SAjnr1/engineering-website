@@ -47,6 +47,14 @@ nav ul li a.active{
     display: none; 
 }
 
+.side-menu{
+    display: none;
+}
+
+.side-menu-overlay{
+    display: none;
+}
+
 
 @media (max-width: 900px){
 
@@ -153,6 +161,152 @@ nav ul li a.active{
         color: #ffffff; /* solid white when active 
         background-color: #ffffff;*/
 
+    }
+
+    /* "More" tab — styled to match the link tabs above, but it's a <button>, not a link */
+    .more-tab{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        width: 100%;
+        height: 100%;
+        background: none;
+        border: none;
+        color: rgba(250, 246, 246, 0.65);
+        font-size: 12px;
+        font-family: "Outfit", sans-serif;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .more-tab svg{
+        width: 22px;
+        height: 22px;
+    }
+
+    .more-tab.active{
+        color: #ffffff;
+    }
+
+    .more-tab:hover,
+    .more-tab:focus,
+    .more-tab:focus-visible,
+    .more-tab:active{
+        background: none;
+        outline: none;
+        box-shadow: none;
+    }
+
+    /* Side drawer menu, opened via the "More" tab */
+    .side-menu{
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100dvh;
+        width: 240px;
+        max-width: 75vw;
+        margin: 0;
+        padding: 20px 0;
+        background: #0019f8;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 102;
+        overflow-y: auto;
+    }
+
+    .side-menu.open{
+        transform: translateX(0);
+    }
+
+    .side-menu:focus,
+    .side-menu:focus-visible{
+        outline: none;
+    }
+
+    .side-menu ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .side-menu li{
+        list-style: none;
+        margin: 0;
+    }
+
+    .side-menu li a{
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 24px;
+        color: rgba(250, 246, 246, 0.75);
+        text-decoration: none;
+        font-size: 15px;
+        font-family: "Outfit", sans-serif;
+        transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .side-menu li a svg{
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+    }
+
+    .side-menu li a.active{
+        color: #ffffff;
+        background: rgba(255,255,255,0.08);
+    }
+
+    /* Close button, shown at the top of the drawer itself */
+    .side-menu-close{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        background: none;
+        border: none;
+        color: #faf6f6;
+        cursor: pointer;
+        padding: 0 20px 16px;
+        margin-bottom: 4px;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .side-menu-close svg{
+        width: 24px;
+        height: 24px;
+    }
+
+    .side-menu-close:hover,
+    .side-menu-close:focus,
+    .side-menu-close:focus-visible,
+    .side-menu-close:active{
+        background: none;
+        color: #faf6f6;
+        outline: none;
+        box-shadow: none;
+    }
+
+    /* Backdrop behind the side menu */
+    .side-menu-overlay{
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 99;
+    }
+
+    .side-menu-overlay.open{
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
     }
 }
 

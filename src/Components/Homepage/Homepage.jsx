@@ -69,10 +69,24 @@ const Homepage = () => {
         </ul>
         </Link>
 
+        <Link to='/teachers' className="media-link">
+        <ul className="card">
+          <UserGroup className='home-icon' strokeWidth={2}/>
+          <span>Teachers</span>
+        </ul>
+        </Link>
+
         <Link to='/project' className='project-link'>
         <ul className="card"> 
           <Cog className='home-icon' strokeWidth={2}/>
           <span>Projects</span>  
+        </ul>
+        </Link>
+
+        <Link to='/slides' className='media-link'>
+        <ul className="card">
+          <Presentation className='home-icon' strokeWidth={2}/>
+          <span>Slides</span>
         </ul>
         </Link>
 
@@ -90,19 +104,9 @@ const Homepage = () => {
         </ul>
         </Link>
 
-        <Link to='/slides' className='media-link'>
-        <ul className="card">
-          <Presentation className='home-icon' strokeWidth={2}/>
-          <span>Slides</span>
-        </ul>
-        </Link>
+        
 
-        <Link to='/teachers' className="media-link">
-        <ul className="card">
-          <UserGroup className='home-icon' strokeWidth={2}/>
-          <span>Teachers</span>
-        </ul>
-        </Link>
+        
 
       </div>
       <Footer/>
