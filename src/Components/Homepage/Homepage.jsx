@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import './Homepage.css'
 import ThreeScene from '../../ThreeScene/ThreeScene3'
-import { Cog, GraduationCap, Clapperboard, CalendarDaysIcon } from 'lucide-react';
+import { Cog, GraduationCap, Clapperboard, CalendarDaysIcon, Presentation, UserGroup } from 'lucide-react';
 import Navbar from '../Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/footer';
@@ -19,7 +19,7 @@ const Homepage = () => {
     const tl = gsap.timeline();
 
     tl.to(engineeringRef.current, {
-      duration: 4,
+      duration: 2,
       scrambleText: {
         text: "Engineering",
         chars: "QWERTYUIOPLKJHGFDSAZXCVBNM",
@@ -87,6 +87,20 @@ const Homepage = () => {
         <ul className="card">
           <Clapperboard className='home-icon' strokeWidth={2}/>
           <span>Media</span>
+        </ul>
+        </Link>
+
+        <Link to='/slides' className='media-link'>
+        <ul className="card">
+          <Presentation className='home-icon' strokeWidth={2}/>
+          <span>Slides</span>
+        </ul>
+        </Link>
+
+        <Link to='/teachers' className="media-link">
+        <ul className="card">
+          <UserGroup className='home-icon' strokeWidth={2}/>
+          <span>Teachers</span>
         </ul>
         </Link>
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 {/*import { Link } from 'react-scroll';*/}
 import { Link, NavLink } from 'react-router-dom';
-import { Home, Cog, GraduationCap, Clapperboard,  CalendarDaysIcon } from 'lucide-react';
+import { Home, Cog, GraduationCap, Clapperboard,  CalendarDaysIcon, Presentation, UserGroup } from 'lucide-react';
 
 
 const Navbar = () => {
@@ -25,7 +25,9 @@ const Navbar = () => {
         <ul className='desktop-nav-links'>
           <li><NavLink to='/admin/home' end className='home-link'>Home</NavLink></li>
           <li><NavLink to='/admin/year_group' className='student-link'>Students</NavLink></li>
+          {/*<li><NavLink to='/admin/teachers' className='student-link'>Teachers</NavLink></li>*/}
           <li><NavLink to='/admin/project' className='project-link'>Projects</NavLink></li>
+         {/* <li><NavLink to='/admin/slides' className='student-link'>Slides</NavLink></li> */}
           <li><NavLink to='/admin/events' className='about-link'>Events</NavLink></li>
           <li><NavLink to='/admin/media' className='media-link'>Media</NavLink></li>
         </ul>
@@ -45,12 +47,24 @@ const Navbar = () => {
             <span>Students</span>
           </NavLink>
         </li>
+      {/*  <li>
+          <NavLink to='/admin/teachers' className='student-link'>
+            <UserGroup strokeWidth={2} />
+            <span>Teachers</span>
+          </NavLink>
+        </li> */}
         <li>
           <NavLink to='/admin/project' className='project-link'>
             <Cog strokeWidth={2} />
             <span>Projects</span>
           </NavLink>
         </li>
+      {/*  <li>
+          <NavLink to='/admin/slides' className='student-link'>
+            <Presentation strokeWidth={2} />
+            <span>Slides</span>
+          </NavLink>
+        </li> */}
         <li>
           <NavLink to='/admin/events' className='about-link'>
             <CalendarDaysIcon strokeWidth={2} />

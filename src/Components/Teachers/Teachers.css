@@ -1,0 +1,11 @@
+.teachers{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg,rgba(0, 38, 255, 0.644),rgba(0, 171, 223, 0.644)), url('../../assets/engineering.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    align-items: center;    
+    justify-content: center; 
+    padding: 20px;
+}

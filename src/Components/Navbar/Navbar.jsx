@@ -63,6 +63,8 @@ const Navbar = () => {
             <span>Media</span>
           </NavLink>
         </li>
+
+      
       </ul>
     </>
   )

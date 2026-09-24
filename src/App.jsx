@@ -14,6 +14,10 @@ import AdminYearGroup from './pages/Year Group/YearGroupPage'
 import Event from './Components/Announcements/Event'
 import ProjectPage from './pages/ProjectPage/ProjectPage'
 import AdminLogin from './pages/AdminLogin/AdminLogin'
+import Slides from './Components/Slides/Slides'
+import Teachers from './Components/Teachers/Teachers'
+import AdminTeacher from './pages/Teachers/AdminTeacher'
+import AdminPresentation from './pages/Slides/AdminPresentation'
 
 
 
@@ -29,6 +33,8 @@ const App = () => {
       <Route path="/events" element={<Event/>}/>
       <Route path="/student/:year" element={<Student />} />
       <Route path="/project/:id" element={<Project />} />
+      <Route path="/slides" element={<Slides />} />
+      <Route path="/teachers" element={<Teachers />} />
 
        <Route path="/admin/login" element={<AdminLogin/>} />
 
@@ -41,6 +47,8 @@ const App = () => {
         <Route path="/admin/year_group" element={<AdminStudent/>}/>
         <Route path="/admin/year_group/:year" element={<AdminYearGroup/>}/>
         <Route path="/admin/project/:id" element={<ProjectPage/>}/>
+        <Route path="/admin/teachers" element={<AdminTeacher/>}/>
+        <Route path="/admin/slides" element={<AdminPresentation/>}/>
       </Route>  
       
 

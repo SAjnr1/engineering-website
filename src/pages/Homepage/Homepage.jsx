@@ -1,7 +1,7 @@
 import React from 'react'
 import './Homepage.css'
 import ThreeScene from '../../ThreeScene/ThreeScene3'
-import { Cog, GraduationCap, Clapperboard,  LogOutIcon, CalendarDaysIcon } from 'lucide-react';
+import { Cog, GraduationCap, Clapperboard,  LogOutIcon, CalendarDaysIcon, UserGroup, Presentation } from 'lucide-react';
 import Navbar from '../Navbar/Navbar';
 import { Link, useNavigate } from 'react-router-dom';
 import Hero from '../../assets/engineering-logo.png'
@@ -40,6 +40,7 @@ const Homepage = () => {
         </div>
       </div>
       <div className="menu-cards">
+
         <Link to='/admin/year_group' end className='student-link'>
         <ul className="card">
           <GraduationCap className='home-icon' strokeWidth={2}/>
@@ -47,12 +48,26 @@ const Homepage = () => {
         </ul>
         </Link>
 
+      {/*  <Link to='/admin/teachers' end className='student-link'>
+        <ul className="card">
+          <UserGroup className='home-icon' strokeWidth={2}/>
+          <span>Teachers</span>
+        </ul>
+        </Link> */}
+
         <Link to='/admin/project' className='project-link'>
         <ul className="card"> 
           <Cog className='home-icon' strokeWidth={2}/>
           <span>Projects</span>  
         </ul>
         </Link>
+
+      {/*  <Link to='/admin/slides' className='project-link'>
+        <ul className="card"> 
+          <Presentation className='home-icon' strokeWidth={2}/>
+          <span>Slides</span>  
+        </ul>
+        </Link> */}
 
 
         <Link to='/admin/events' className='media-link'>
