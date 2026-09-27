@@ -82,16 +82,23 @@ const Navbar = () => {
         </li>
         <li>
           {/* Replaces the old Media tab: opens the full side drawer instead of navigating */}
-          <button
-            type="button"
+          <span
+            role="button"
+            tabIndex={0}
             className={`more-tab ${menuOpen ? 'active' : ''}`}
             aria-label={menuOpen ? 'Close menu' : 'More'}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setMenuOpen((open) => !open);
+              }
+            }}
           >
             <Menu strokeWidth={2} />
             <span>More</span>
-          </button>
+          </span>
         </li>
       </ul>
 
@@ -104,14 +111,21 @@ const Navbar = () => {
 
       {/* Side drawer menu, opened via the "More" tab — only rendered visually on mobile via CSS */}
       <div className={`side-menu ${menuOpen ? 'open' : ''}`}>
-        <button
-          type="button"
+        <span
+          role="button"
+          tabIndex={0}
           className="side-menu-close"
           aria-label="Close menu"
           onClick={closeMenu}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              closeMenu();
+            }
+          }}
         >
           <X strokeWidth={2} />
-        </button>
+        </span>
 
         <ul>
           <li>
